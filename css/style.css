@@ -1,0 +1,680 @@
+/* RESET */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 80%;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* VARIABLES */
+
+:root {
+    /* Light mode colors */
+
+    /* THIS IS MY OWN COLORS */
+    --color-card-background: #eee;
+    --color-text: #000;
+    --color-background: #fff;
+
+    --color-facebook: rgba(0, 0, 255, 0.842);
+    --color-twitter: rgb(0, 119, 255);
+    --color-instagram: rgba(255, 0, 170, 0.815);
+    --color-youtube: rgba(255, 0, 0, 0.795);
+
+    /* THIS IS THE REAL COLORS */
+    /* --color-card-background: #eee;
+    --color-facebook: #3b5998;
+    --color-twitter: #1da1f2;
+    --color-instagram: #e4405f;
+    --color-youtube: #ff0000; */
+}
+
+body.dark-mode {
+    /* Dark mode colors */
+
+    --color-card-background: #333;
+    --color-text: #fff;
+    --color-background: #121212;
+}
+
+/* HEADER */
+
+header {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    margin: 2rem 0 1.5rem 0;
+    position: relative;
+}
+
+header h1 {
+    letter-spacing: -1px;
+}
+
+header p {
+    color: #999;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* TOGGLE */
+
+.theme-toggle {
+    position: absolute;
+    top: 0.5rem;
+    right: 0rem;
+    display: flex;
+}
+
+.theme-toggle label {
+    margin-right: 1rem;
+    color: #666;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.theme-toggle input {
+    cursor: pointer;
+    width: 40px;
+    height: 20px;
+    appearance: none;
+    background-color: #ccc;
+    border-radius: 20px;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle input:checked {
+    background-color: #4caf50;
+}
+
+.theme-toggle input::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.theme-toggle input:checked::before {
+    transform: translateX(18px);
+}
+
+/* MAIN */
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card {
+    background-color: var(--color-card-background);
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.big {
+    height: 200px;
+}
+
+.big-facebook {
+    border-top: 5px solid var(--color-facebook);
+}
+
+.big-twitter {
+    border-top: 5px solid var(--color-twitter);
+}
+
+.big-instgram {
+    border-top: 5px solid var(--color-instagram);
+}
+
+.big-youtube {
+    border-top: 5px solid var(--color-youtube);
+}
+
+/* LOGO */
+
+.logo-username {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+}
+
+i {
+    font-size: 1.5rem;
+}
+
+.logo-username p {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.logo-facebook {
+    color: var(--color-facebook);
+}
+
+.logo-twitter {
+    color: var(--color-twitter);
+}
+
+.logo-instgram {
+    color: var(--color-instagram);
+}
+
+.logo-youtube {
+    color: var(--color-youtube);
+}
+
+.followers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.followers h1 {
+    font-size: 4rem;
+    letter-spacing: -2px;
+}
+
+.followers p {
+    font-weight: bold;
+    color: #999;
+    letter-spacing: 5px;
+}
+
+.today {
+    font-weight: bold;
+}
+
+.today-facebook {
+    color: var(--color-facebook);
+}
+
+.today-twitter {
+    color: var(--color-twitter);
+}
+
+.today-instgram {
+    color: var(--color-instagram);
+}
+
+.today-youtube {
+    color: var(--color-youtube);
+}
+
+/* BAR */
+
+.bar {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.bar h2 {
+    letter-spacing: -1px;
+}
+
+/* SECTION */
+
+.small {
+    height: 120px;
+}
+
+.p-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.p-logo p {
+    font-weight: bold;
+    color: #666;
+}
+
+.num {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    padding-top: 1.5rem;
+}
+
+.num h1 {
+    font-size: 2rem;
+}
+
+.num p {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--color-twitter);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 480px) {
+    body {
+        width: 60%;
+    }
+
+    header {
+        margin: 1rem 0 2.5rem 0;
+        position: relative;
+    }
+
+    header h1 {
+        font-size: 1rem;
+        letter-spacing: 0;
+    }
+
+    header p {
+        font-size: 0.8rem;
+    }
+
+    .theme-toggle {
+        top: 2.7rem;
+        left: 0.1rem;
+        justify-content: space-between;
+    }
+
+    .theme-toggle label {
+        font-size: 0.9rem;
+    }
+
+    .theme-toggle input {
+        width: 30px;
+        height: 15px;
+    }
+
+    .theme-toggle input::before {
+        top: 1px;
+        left: 2px;
+        width: 12px;
+        height: 13px;
+    }
+
+    .theme-toggle input:checked::before {
+        transform: translateX(14px);
+    }
+
+    .cards {
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .followers h1 {
+        font-size: 3rem;
+    }
+
+    .bar {
+        text-align: center;
+    }
+
+    section .cards:first-child,
+    section .cards:last-child {
+        gap: 20px;
+    }
+
+    .small {
+        height: 100px;
+    }
+
+    .p-logo p {
+        font-size: 0.9rem;
+    }
+
+    .num {
+        padding-top: 0.5rem;
+    }
+
+    .num h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* =============================== */
+
+@media (min-width: 481px) {
+    header {
+        width: 60%;
+        margin: 1rem auto 2rem;
+    }
+
+    header h1 {
+        font-size: 1.1rem;
+    }
+
+    header p {
+        font-size: 0.8rem;
+    }
+
+    .theme-toggle {
+        top: 2.7rem;
+        left: 0.1rem;
+        justify-content: space-between;
+    }
+
+    .theme-toggle label {
+        font-size: 0.9rem;
+    }
+
+    .theme-toggle input {
+        width: 30px;
+        height: 15px;
+    }
+
+    .theme-toggle input::before {
+        top: 1px;
+        left: 2px;
+        width: 12px;
+        height: 13px;
+    }
+
+    .theme-toggle input:checked::before {
+        transform: translateX(14px);
+    }
+
+    .cards {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .cards:last-child {
+        margin-bottom: 10px;
+    }
+
+    .bar {
+        text-align: center;
+        margin: 2rem 0 0.5rem 0;
+    }
+
+    .small {
+        height: 100px;
+    }
+
+    .num {
+        padding-top: 0.5rem;
+    }
+}
+
+/* =============================== */
+
+/* ADDITIONAL MEDIA QUERY */
+@media (min-width: 650px) {
+    header {
+        width: 100%;
+    }
+
+    .theme-toggle {
+        top: 0.5rem;
+        justify-content: end;
+    }
+}
+
+/* =============================== */
+
+@media (min-width: 769px) {
+    header {
+        margin: 1.5rem auto;
+    }
+
+    .theme-toggle {
+        top: 1rem;
+        right: 0.5rem;
+    }
+
+    .theme-toggle label {
+        font-size: 1rem;
+        margin-right: 2rem;
+    }
+
+    .theme-toggle input {
+        width: 40px;
+        height: 20px;
+    }
+
+    .theme-toggle input::before {
+        top: 2px;
+        left: 3px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .theme-toggle input:checked::before {
+        transform: translateX(18px);
+    }
+
+    .cards {
+        flex-wrap: nowrap;
+    }
+
+    .card {
+        width: 200px;
+    }
+
+    .p-logo p {
+        font-size: 0.75rem;
+    }
+}
+
+/* =============================== */
+
+@media (min-width: 1025px) {
+    header {
+        margin: 2rem auto;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.25rem;
+    }
+
+    .theme-toggle {
+        top: 1.25rem;
+        right: 0.5rem;
+    }
+
+    .theme-toggle label {
+        font-size: 1.25rem;
+        margin-right: 2rem;
+    }
+
+    .theme-toggle input {
+        width: 50px;
+        height: 25px;
+    }
+
+    .theme-toggle input::before {
+        top: 3px;
+        left: 4px;
+        width: 19px;
+        height: 19px;
+    }
+
+    .theme-toggle input:checked::before {
+        transform: translateX(24px);
+    }
+
+    .card {
+        width: 250px;
+    }
+
+    .logo-username {
+        width: 60%;
+    }
+
+    i {
+        font-size: 2rem;
+    }
+
+    .logo-username p {
+        font-size: 1.1rem;
+    }
+
+    .bar {
+        margin: 3rem 0 1.5rem 0;
+    }
+
+    section .card {
+        margin-bottom: 1rem;
+    }
+
+    .p-logo p {
+        font-size: 1rem;
+    }
+}
+
+/* =============================== */
+
+@media (min-width: 2560px) {
+    header {
+        margin: 4rem 0;
+    }
+
+    header h1 {
+        font-size: 5rem;
+    }
+
+    header p {
+        font-size: 2.5rem;
+    }
+
+    .theme-toggle {
+        top: 2.5rem;
+    }
+
+    .theme-toggle label {
+        font-size: 2rem;
+        margin-right: 3rem;
+    }
+
+    .theme-toggle input {
+        width: 80px;
+        height: 40px;
+    }
+
+    .theme-toggle input::before {
+        top: 4px;
+        left: 6px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .theme-toggle input:checked::before {
+        transform: translateX(36px);
+    }
+
+    .card {
+        width: 450px;
+    }
+
+    .big {
+        height: 350px;
+    }
+
+    .logo-username i {
+        font-size: 3.5rem;
+    }
+
+    .logo-username p {
+        font-size: 2rem;
+    }
+
+    .followers {
+        margin: 2rem;
+    }
+
+    .followers h1 {
+        font-size: 5rem;
+    }
+
+    .followers p {
+        font-size: 2rem;
+    }
+
+    .today {
+        font-size: 2rem;
+    }
+
+    .bar {
+        font-size: 2rem;
+        margin: 5rem 0 2.5rem 0;
+    }
+
+    .small {
+        height: 175px;
+    }
+
+    section .card {
+        margin-bottom: 2.5rem;
+    }
+
+    .p-logo p {
+        font-size: 2rem;
+    }
+
+    .p-logo i {
+        font-size: 3rem;
+    }
+
+    .num h1 {
+        font-size: 3rem;
+    }
+
+    .num p {
+        font-size: 2rem;
+    }
+
+    .big-facebook {
+        border-top: 10px solid var(--color-facebook);
+    }
+
+    .big-twitter {
+        border-top: 10px solid var(--color-twitter);
+    }
+
+    .big-instgram {
+        border-top: 10px solid var(--color-instagram);
+    }
+
+    .big-youtube {
+        border-top: 10px solid var(--color-youtube);
+    }
+}
